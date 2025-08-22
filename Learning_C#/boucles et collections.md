@@ -1,3 +1,11 @@
+# **Boucles et Collections C# - Guide Pratique**
+
+> **🔗 Voir aussi :** 
+> - [Complexité Algorithmique et Performance](./Complexité%20Algorithmique%20et%20Performance.md) pour l'analyse de performance des collections
+> - [Algorithmes de Tri et Graphes](./Algorithmes%20de%20Tri%20et%20Théorie%20des%20Graphes.md) pour les algorithmes sur les collections
+
+---
+
 ### 1. Quels sont les prérequis pour utiliser `foreach` sur une collection ?
 
 Pour utiliser `foreach` sur une collection en C#, la collection doit implémenter l'interface `IEnumerable` ou `IEnumerable<T>`. Ces interfaces définissent une méthode `GetEnumerator` qui retourne un énumérateur permettant d'itérer sur les éléments de la collection.
@@ -29,15 +37,19 @@ foreach (var item in collection)
 
 ### 2. Quelle est la différence entre une `List` et un `Dictionary` en C# ?
 
+> **⚡ Performance :** Pour l'analyse détaillée des complexités O(n) vs O(1), voir [Complexité des Collections](./Complexité%20Algorithmique%20et%20Performance.md#collections-net-et-complexité)
+
 - **`List<T>`** :
   - **Description** : Une liste est une collection ordonnée d'éléments de type `T`.
-  - **Accès** : Les éléments sont accessibles par leur index.
+  - **Accès** : Les éléments sont accessibles par leur index (**O(1)**)
+  - **Recherche** : Recherche linéaire (**O(n)**)
   - **Utilisation** : Idéale pour les collections où l'ordre des éléments est important et où les éléments sont accédés par leur position.
   - **Exemple** : `List<int> numbers = new List<int> { 1, 2, 3 };`
 
 - **`Dictionary<TKey, TValue>`** :
   - **Description** : Un dictionnaire est une collection de paires clé-valeur, où chaque clé est unique.
-  - **Accès** : Les éléments sont accessibles par leur clé.
+  - **Accès** : Les éléments sont accessibles par leur clé (**O(1) average case**)
+  - **Recherche** : Recherche par hash (**O(1) average case**)
   - **Utilisation** : Idéale pour les collections où les éléments doivent être associés à des clés uniques et où l'accès rapide par clé est nécessaire.
   - **Exemple** : `Dictionary<string, int> ages = new Dictionary<string, int> { { "Alice", 30 }, { "Bob", 25 } };`
 

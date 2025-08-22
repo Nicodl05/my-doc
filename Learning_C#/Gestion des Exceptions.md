@@ -1,4 +1,4 @@
-# Gestion Avancée des Exceptions et Patterns
+ # Gestion Avancée des Exceptions et Patterns
 
 ## 1. Hiérarchie des exceptions en C#
 
@@ -339,6 +339,7 @@ public void ProcessFile(string path)
 ```
 <details>
 <summary>Réponse</summary>
+
 ```csharp
 public void ProcessFile(string path)
 {
@@ -362,6 +363,7 @@ public void ProcessFile(string path)
 **Q5:** Quand utiliser des exceptions vs des codes de retour ?
 <details>
 <summary>Réponse</summary>
+
 - **Exceptions** : Conditions exceptionnelles, erreurs inattendues
 - **Codes de retour** : Conditions normales prévisibles (validation, parsing)
 - Pattern Try-Parse pour éviter les exceptions dans les cas fréquents
@@ -372,6 +374,7 @@ public void ProcessFile(string path)
 **Q6:** Implémentez une méthode qui retry automatiquement en cas d'exception transitoire.
 <details>
 <summary>Réponse</summary>
+
 ```csharp
 public async Task<T> RetryAsync<T>(Func<Task<T>> operation, int maxRetries = 3)
 {
@@ -403,6 +406,7 @@ private bool IsTransientException(Exception ex)
 **Q7:** Comment implémenter une exception qui contient plusieurs erreurs de validation ?
 <details>
 <summary>Réponse</summary>
+
 ```csharp
 public class ValidationException : Exception
 {

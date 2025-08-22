@@ -1,6 +1,15 @@
+# **Programmation Orientée Objet (POO) en C# - Guide Complet**
+
+> **🔗 Compléments :**
+> - [Design Patterns](./Design%20Patterns.md) pour les patterns GOF et architecturaux
+> - [Gestion des Exceptions](./Gestion%20des%20Exceptions.md) pour la robustesse des classes
+> - [Collections](./boucles%20et%20collections.md) pour l'utilisation avec les objets
+
+---
+
 Voici des réponses détaillées à vos questions :
 
-### 1. Qu’est-ce qu’une interface et à quoi sert-elle ?
+### 1. Qu'est-ce qu'une interface et à quoi sert-elle ?
 
 **Définition :**
 Une interface en C# est un contrat qui définit un ensemble de membres (méthodes, propriétés, événements, indexeurs) que les classes ou structures implémentant l'interface doivent fournir. Les interfaces ne contiennent pas de code d'implémentation, seulement des signatures de membres.
@@ -9,6 +18,8 @@ Une interface en C# est un contrat qui définit un ensemble de membres (méthode
 - **Abstraction** : Les interfaces permettent de définir des comportements sans se soucier de leur implémentation.
 - **Polymorphisme** : Elles permettent de traiter des objets de différentes classes de manière uniforme, tant qu'ils implémentent la même interface.
 - **Découplage** : Les interfaces favorisent un découplage fort entre les composants, facilitant ainsi la maintenance et les tests.
+
+> **🎯 Patterns :** Pour des exemples avancés d'utilisation d'interfaces, voir [Strategy Pattern](./Design%20Patterns.md#strategy-pattern) et [Dependency Injection](./Design%20Patterns.md#dependency-injection)
 
 **Exemple :**
 ```csharp
@@ -33,7 +44,7 @@ public class Cat : IAnimal
     }
 }
 
-// Utilisation
+// Utilisation polymorphe
 IAnimal animal = new Dog();
 animal.MakeSound(); // Affiche "Woof!"
 ```

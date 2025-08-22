@@ -1,9 +1,18 @@
-# Délégués, Événements et Programmation Asynchrone
+# **Délégués, Événements et Programmation Asynchrone - Guide Avancé**
+
+> **🔗 Références :**
+> - [LINQ et Lambda](./LINQ%20et%20Expressions%20Lambda.md) pour les expressions lambda avec délégués
+> - [POO](./POO.md) pour les concepts d'événements dans les classes
+> - [Performance](./Complexité%20Algorithmique%20et%20Performance.md) pour l'optimisation async/await
+
+---
 
 ## 1. Qu'est-ce qu'un délégué en C# ?
 
 **Définition :**
 Un délégué est un type qui représente des références à des méthodes avec une signature spécifique. C'est comme un pointeur de fonction en C++, mais en version type-safe.
+
+> **💡 Lambda :** Les délégués sont souvent utilisés avec les expressions lambda, voir [LINQ - Expressions Lambda](./LINQ%20et%20Expressions%20Lambda.md#expressions-lambda)
 
 **Types de délégués :**
 ```csharp

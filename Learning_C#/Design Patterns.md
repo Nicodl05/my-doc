@@ -1,8 +1,17 @@
-# Patterns de Conception (Design Patterns) en C#
+# **Design Patterns en C# - Guide Architectural**
+
+> **🔗 Fondations :**
+> - [POO](./POO.md) - Concepts de base (interfaces, héritage, polymorphisme)
+> - [Délégués et Events](./Délégués%20et%20Async.md) - Observer pattern et événements
+> - [Performance](./Complexité%20Algorithmique%20et%20Performance.md) - Optimisation des patterns
+
+---
 
 ## 1. Pattern Singleton
 
 **But :** Garantir qu'une classe n'a qu'une seule instance et fournir un point d'accès global.
+
+> **⚡ Performance :** Pour l'analyse de performance du Singleton, voir [Thread Safety](./Complexité%20Algorithmique%20et%20Performance.md#optimisation-mémoire-et-gc)
 
 **Implémentation thread-safe :**
 ```csharp

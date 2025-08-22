@@ -1,4 +1,11 @@
-# LINQ et Expressions Lambda
+# **LINQ et Expressions Lambda - Guide Avancé**
+
+> **🔗 Références :** 
+> - [Collections et Performance](./boucles%20et%20collections.md) pour les bases des collections
+> - [Complexité Algorithmique](./Complexité%20Algorithmique%20et%20Performance.md) pour l'optimisation LINQ
+> - [Délégués et Async](./Délégués%20et%20Async.md) pour les concepts avancés de délégués
+
+---
 
 ## 1. Qu'est-ce que LINQ et pourquoi l'utiliser ?
 
@@ -11,11 +18,13 @@ LINQ (Language Integrated Query) est une technologie Microsoft qui permet d'écr
 - **Lisibilité** : Code plus expressif et facile à comprendre
 - **Performance** : Optimisations automatiques, notamment avec Entity Framework
 
+> **⚡ Performance :** Pour l'analyse détaillée des optimisations LINQ, voir [LINQ Performance](./Complexité%20Algorithmique%20et%20Performance.md#optimisation-et-profiling)
+
 **Exemple :**
 ```csharp
 var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-// Sans LINQ
+// Sans LINQ - O(n) avec boucle manuelle
 var evenNumbers = new List<int>();
 foreach (var number in numbers)
 {
@@ -23,7 +32,7 @@ foreach (var number in numbers)
         evenNumbers.Add(number);
 }
 
-// Avec LINQ
+// Avec LINQ - O(n) avec optimisations potentielles
 var evenNumbersLinq = numbers.Where(n => n % 2 == 0).ToList();
 ```
 
@@ -197,6 +206,7 @@ x => x * 2
 **Q4:** Quelle est la différence entre `IEnumerable<T>` et `IQueryable<T>` ?
 <details>
 <summary>Réponse</summary>
+
 - IEnumerable<T> : Exécution en mémoire, utilisé pour les collections LINQ to Objects
 - IQueryable<T> : Peut être traduit en requêtes (SQL), utilisé pour LINQ to SQL/EF
 </details>
@@ -218,6 +228,7 @@ Console.WriteLine(string.Join(", ", query));
 **Q6:** Écrivez une requête LINQ qui groupe des personnes par ville et calcule l'âge moyen par ville.
 <details>
 <summary>Réponse</summary>
+
 ```csharp
 var result = people
     .GroupBy(p => p.City)
@@ -231,11 +242,13 @@ var result = people
 **Q7:** Comment éviter les exceptions lors de l'utilisation de `First()` ?
 <details>
 <summary>Réponse</summary>
+
 Utiliser `FirstOrDefault()` qui retourne la valeur par défaut au lieu de lever une exception, ou vérifier avec `Any()` avant d'utiliser `First()`.
 </details>
 
 **Q8:** Quelle est la performance relative de `Count()` vs `Any()` pour vérifier si une collection contient des éléments ?
 <details>
 <summary>Réponse</summary>
+
 `Any()` est plus performant car il s'arrête dès qu'il trouve un élément, tandis que `Count()` peut énumérer toute la collection.
 </details>
