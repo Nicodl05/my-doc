@@ -18,6 +18,8 @@ Les services de sécurité permettent d'intégrer la sécurité dès la concepti
 
 ## 🛡️ **AWS WAF - Web Application Firewall**
 
+**Définition :** AWS WAF (Web Application Firewall) est un pare-feu d'application web qui protège les applications contre les exploits web courants en filtrant et en surveillant le trafic HTTP/HTTPS. Le service permet de créer des règles personnalisées pour bloquer ou autoriser les requêtes basées sur des conditions comme les adresses IP, les en-têtes HTTP, les chaînes de requête URI, et le corps des requêtes. WAF peut être déployé devant CloudFront (protection globale), Application Load Balancer (protection régionale), ou API Gateway. Le service inclut AWS Managed Rules, un ensemble de règles pré-configurées contre les menaces communes comme les injections SQL, les scripts cross-site (XSS), et les attaques par inclusion de fichiers. WAF supporte le rate limiting, la protection contre les bots, et l'intégration avec des services de renseignement sur les menaces pour une protection adaptative.
+
 ### **Quand Choisir WAF ?**
 
 #### **Scénarios Idéaux**
@@ -92,6 +94,8 @@ Users → WAF (CloudFront) → WAF (Regional) → ALB → Application
 ---
 
 ## 🛡️ **AWS Shield - Protection DDoS**
+
+**Définition :** AWS Shield est un service de protection contre les attaques par déni de service distribué (DDoS) qui protège les applications exécutées sur AWS contre les attaques réseau et applicatives. Shield Standard offre une protection automatique contre les attaques DDoS les plus courantes au niveau des couches 3 et 4 (infrastructure), incluant les attaques SYN flood, UDP flood, et attaques de réflexion/amplification. Shield Advanced fournit une protection étendue contre les attaques sophistiquées au niveau des couches 6 et 7 (application), incluant les attaques volumétriques massives, les attaques de couche d'état, et les attaques applicatives complexes. Le service s'intègre avec CloudFront, Route 53, Global Accelerator, et Elastic Load Balancing, offrant une protection globale avec atténuation automatique en edge locations. Shield Advanced inclut l'accès à l'équipe de réponse DDoS AWS (DRT) 24/7 et une protection contre les coûts liés aux attaques.
 
 ### **Quand Choisir Shield ?**
 
@@ -168,6 +172,8 @@ Shield Advanced → Global Accelerator → Multi-Region ALBs
 
 ## 🔍 **Amazon GuardDuty - Threat Detection**
 
+**Définition :** Amazon GuardDuty est un service de détection de menaces intelligent qui utilise le machine learning, l'intelligence artificielle, et les flux de renseignement sur les menaces intégrés pour identifier les activités malveillantes et non autorisées dans les environnements AWS. Le service analyse continuellement les logs CloudTrail, les logs de flux VPC, les logs DNS, et les événements EKS pour détecter plus de 50 types de menaces, incluant les attaques par credential stuffing, les communications avec serveurs de commande et contrôle (C2), les accès anormaux aux données sensibles, et les déploiements de malware. GuardDuty génère des findings détaillés avec un score de gravité et un contexte complet pour faciliter l'investigation et la réponse. Le service s'intègre nativement avec EventBridge pour l'automatisation de la réponse aux incidents et supporte l'activation dans plusieurs régions pour une couverture globale.
+
 ### **Quand Choisir GuardDuty ?**
 
 #### **Scénarios Idéaux**
@@ -243,6 +249,8 @@ GuardDuty → Kinesis → OpenSearch → Kibana Dashboards
 
 ## 🔬 **Amazon Inspector - Vulnerability Assessment**
 
+**Définition :** Amazon Inspector est un service d'évaluation automatique des vulnérabilités qui découvre les problèmes de sécurité et les écarts de conformité dans les workloads AWS. Le service offre plusieurs types d'assessments : Inspector Classic pour l'évaluation des instances EC2 basée sur des règles de sécurité prédéfinies, Amazon Inspector EC2 scanning pour la détection de vulnérabilités dans les systèmes d'exploitation et les paquets logiciels, Lambda function scanning pour l'analyse des dépendances et du code, et container image scanning pour les images stockées dans Amazon ECR. Inspector utilise une base de données de vulnérabilités constamment mise à jour et peut identifier les problèmes de configuration réseau, les ports ouverts non nécessaires, et les vulnérabilités connues (CVEs). Le service s'intègre avec Systems Manager pour l'exécution des scans et peut être automatisé dans les pipelines CI/CD pour une approche DevSecOps.
+
 ### **Quand Choisir Inspector ?**
 
 #### **Scénarios Idéaux**
@@ -317,6 +325,8 @@ EC2 Fleet → Inspector → Systems Manager → Patch Deployment
 ---
 
 ## 🔐 **Amazon Macie - Data Security & Privacy**
+
+**Définition :** Amazon Macie est un service de sécurité des données qui utilise le machine learning et l'analyse de pattern matching pour découvrir, classer et protéger automatiquement les données sensibles dans Amazon S3. Le service analyse continuellement les buckets S3 pour identifier les informations personnelles identifiables (PII) comme les noms, adresses, numéros de téléphone, adresses email, et numéros de cartes de crédit, ainsi que les données financières, médicales (PHI), et les informations d'identification. Macie fournit des identificateurs de données gérées pour les types de données courants et permet la création d'identificateurs personnalisés pour les patterns métier spécifiques. Le service génère des findings détaillés sur les risques de sécurité des données, les violations de politiques de partage, et les accès non autorisés, avec des scores de gravité et des recommandations de remédiation. Macie s'intègre avec AWS Organizations pour une gestion multi-comptes et peut automatiser les réponses aux violations via EventBridge.
 
 ### **Quand Choisir Macie ?**
 

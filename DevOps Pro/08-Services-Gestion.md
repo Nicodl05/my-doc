@@ -18,6 +18,8 @@ Les services de gestion permettent d'orchestrer et gouverner l'infrastructure à
 
 ## 🔧 **AWS Systems Manager - Gestion Opérationnelle Unifiée**
 
+**Définition :** AWS Systems Manager est une plateforme unifiée de gestion opérationnelle qui permet d'automatiser les tâches administratives, d'appliquer des correctifs de sécurité, et de maintenir la conformité opérationnelle à grande échelle. Le service comprend plusieurs capacités : Run Command pour l'exécution de commandes à distance sur des flottes d'instances, State Manager pour la configuration continue et l'application de politiques, Maintenance Windows pour la planification des opérations pendant les périodes de maintenance, Automation pour l'exécution de workflows opérationnels complexes, et Parameter Store pour la gestion centralisée des paramètres de configuration. Systems Manager s'intègre avec EC2, ECS, EKS, et Lambda, offrant une visibilité unifiée sur l'infrastructure hybride et cloud-native. Le service utilise l'agent SSM installé sur les instances pour collecter l'inventaire, les métriques de performance, et les informations de conformité.
+
 ### **Quand Choisir Systems Manager ?**
 
 #### **Scénarios Idéaux**
@@ -94,6 +96,8 @@ Config Rule Violation → EventBridge → Systems Manager → Remediation
 
 ## 📋 **AWS Config - Conformité et Audit de Configuration**
 
+**Définition :** AWS Config est un service d'audit et de conformité qui enregistre continuellement les configurations des ressources AWS et évalue leur conformité par rapport aux politiques souhaitées. Le service capture automatiquement les changements de configuration (configuration items) pour plus de 80 types de ressources AWS, incluant EC2, S3, VPC, IAM, et Lambda, en maintenant un historique complet des modifications. Config Rules permettent de définir des règles de conformité personnalisées ou d'utiliser des règles gérées AWS pour vérifier automatiquement les configurations contre les meilleures pratiques de sécurité, les standards de conformité (CIS, PCI DSS, HIPAA), et les politiques organisationnelles. Le service supporte les Conformance Packs pour regrouper plusieurs règles, l'agrégation multi-comptes/multi-régions pour une vue consolidée, et l'intégration avec Systems Manager pour la remédiation automatique des violations de conformité.
+
 ### **Quand Choisir Config ?**
 
 #### **Scénarios Idéaux**
@@ -169,6 +173,8 @@ Config Aggregator → Organizations → Control Tower → Dashboards
 ---
 
 ## 🏢 **AWS Organizations - Gestion Multi-Comptes**
+
+**Définition :** AWS Organizations est un service de gestion de comptes qui permet de créer et de gérer centralement plusieurs comptes AWS comme une seule unité organisationnelle. Le service offre une hiérarchie de comptes avec des Organizational Units (OU) pour grouper logiquement les comptes par fonction, environnement, ou équipe. Organizations applique des politiques centralisées via Service Control Policies (SCPs) qui définissent les permissions maximales autorisées au niveau des comptes ou OU, des Tag Policies pour la gouvernance des tags, et des Backup Policies pour la gestion centralisée des sauvegardes. Le service facilite la facturation consolidée, le partage des Savings Plans et Reserved Instances, et l'accès centralisé aux services AWS. Organizations s'intègre avec AWS Control Tower pour créer des landing zones sécurisées, IAM Identity Center pour l'authentification centralisée, et de nombreux autres services AWS pour une gestion unifiée à grande échelle.
 
 ### **Quand Choisir Organizations ?**
 

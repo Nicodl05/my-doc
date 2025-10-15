@@ -18,6 +18,8 @@ Les services de Machine Learning permettent d'intégrer l'IA dans les pipelines 
 
 ## 🧠 **Amazon SageMaker - Plateforme ML Complète**
 
+**Définition :** Amazon SageMaker est une plateforme entièrement managée de machine learning qui couvre l'ensemble du cycle de vie ML, de la préparation des données à la production. Le service comprend SageMaker Studio comme environnement de développement intégré pour les data scientists, SageMaker Pipelines pour l'orchestration MLOps avec CI/CD, SageMaker Autopilot pour l'autoML automatisé sans expertise ML avancée, et SageMaker Model Registry pour la gestion du cycle de vie des modèles. SageMaker offre des instances optimisées pour le training (avec GPU/TPU), l'inférence temps réel via des endpoints, l'inférence serverless pour les workloads variables, et le déploiement edge via SageMaker Edge Manager. Le service s'intègre nativement avec S3 pour les données, ECR pour les conteneurs, et CloudWatch pour le monitoring, offrant une expérience MLOps complète avec traçabilité, reproductibilité, et gouvernance.
+
 ### **Quand Choisir SageMaker ?**
 
 #### **Scénarios Idéaux**
@@ -94,6 +96,8 @@ API Gateway → Lambda → SageMaker Endpoint → DynamoDB
 
 ## 👁️ **Amazon Rekognition - Analyse d'Images et Vidéos**
 
+**Définition :** Amazon Rekognition est un service de computer vision basé sur le deep learning qui permet d'analyser des images et vidéos pour extraire des informations significatives sans expertise ML. Le service offre plusieurs API : Object and Scene Detection pour identifier des milliers d'objets et scènes, Facial Analysis pour détecter et analyser les visages (âge, émotions, genre), Text Detection pour l'OCR (reconnaissance optique de caractères), Content Moderation pour identifier du contenu inapproprié ou offensant, et Facial Recognition pour comparer et rechercher des visages dans des collections. Rekognition supporte l'analyse d'images statiques, de vidéos stockées, et de streams vidéo temps réel via Kinesis Video Streams. Le service permet la création de modèles personnalisés via Custom Labels pour des cas d'usage spécifiques, et offre des capacités de recherche visuelle pour retrouver des images similaires dans de grandes collections.
+
 ### **Quand Choisir Rekognition ?**
 
 #### **Scénarios Idéaux**
@@ -169,6 +173,8 @@ Cameras → Kinesis Video → Rekognition → EventBridge → Security Response
 ---
 
 ## 📝 **Amazon Comprehend - Traitement du Langage Naturel**
+
+**Définition :** Amazon Comprehend est un service de traitement du langage naturel (NLP) qui utilise le machine learning pour découvrir des insights et des relations dans le texte non structuré. Le service offre plusieurs capacités : Sentiment Analysis pour déterminer si le texte est positif, négatif, neutre, ou mixte, Entity Recognition pour identifier des entités nommées (personnes, organisations, lieux, dates), Key Phrase Extraction pour extraire les concepts et expressions importants, Language Detection pour identifier automatiquement la langue du texte, et Topic Modeling pour découvrir les thèmes principaux dans de grandes collections de documents. Comprehend supporte plus de 100 langues, permet la création de modèles personnalisés via Custom Classification et Custom Entity Recognition pour des cas d'usage spécifiques, et offre des capacités d'analyse temps réel via des API synchrones ou asynchrones pour le traitement par lots.
 
 ### **Quand Choisir Comprehend ?**
 

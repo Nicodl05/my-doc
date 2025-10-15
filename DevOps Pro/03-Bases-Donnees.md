@@ -19,6 +19,8 @@ Les bases de données constituent le cœur de la persistance des données applic
 
 ## 🐘 **Amazon RDS - Relational Database Service**
 
+**Définition :** Amazon Relational Database Service (RDS) est un service web qui facilite la configuration, l'exploitation et la mise à l'échelle d'une base de données relationnelle dans le cloud. Il fournit une capacité redimensionnable et rentable tout en gérant les tâches d'administration de base de données courantes. RDS prend en charge plusieurs moteurs de base de données populaires (MySQL, PostgreSQL, MariaDB, Oracle, SQL Server) et offre des fonctionnalités telles que les sauvegardes automatiques, les mises à jour logicielles, les instantanés de base de données, et la surveillance des performances. Le service permet aux développeurs de se concentrer sur le développement d'applications plutôt que sur la gestion de l'infrastructure de base de données.
+
 ### **Quand Choisir RDS ?**
 
 #### **Scénarios Idéaux**
@@ -91,6 +93,8 @@ On-premises App → DMS → RDS → Read Replicas
 
 ## 🌟 **Amazon Aurora - Base de Données Haute Performance**
 
+**Définition :** Amazon Aurora est une base de données relationnelle compatible MySQL et PostgreSQL conçue pour le cloud, offrant des performances et une disponibilité élevées à un coût réduit. Aurora fournit jusqu'à 5x les performances d'une base de données MySQL standard et 3x celles d'une base de données PostgreSQL standard, avec une haute disponibilité grâce à sa réplication sur six copies de données dans trois zones de disponibilité. Le service met automatiquement à l'échelle le stockage jusqu'à 128 TiB, offre des sauvegardes continues, des instantanés rapides, et des fonctionnalités avancées comme Aurora Serverless pour les workloads variables. Aurora est optimisé pour les applications d'entreprise critiques nécessitant des performances élevées et une disponibilité maximale.
+
 ### **Quand Choisir Aurora ?**
 
 #### **Scénarios Idéaux**
@@ -162,6 +166,8 @@ Aurora Global Database → Regional Clusters → Applications
 
 ## ⚡ **Amazon DynamoDB - NoSQL Haute Performance**
 
+**Définition :** Amazon DynamoDB est une base de données NoSQL entièrement managée et serverless conçue pour offrir des performances rapides et prévisibles à n'importe quelle échelle. Elle fournit une latence de l'ordre de quelques millisecondes pour les lectures et écritures, avec une scalabilité automatique qui s'adapte aux demandes des applications. DynamoDB prend en charge les modèles de données clé-valeur et document, offre des fonctionnalités avancées comme les streams pour le traitement temps réel des changements, les tables globales pour la réplication multi-région, et DynamoDB Accelerator (DAX) pour le caching en mémoire. Le service est particulièrement adapté aux applications web à trafic élevé, aux systèmes de gaming, aux applications IoT, et aux workloads serverless nécessitant une évolutivité et des performances élevées.
+
 ### **Quand Choisir DynamoDB ?**
 
 #### **Scénarios Idéaux**
@@ -232,6 +238,8 @@ IoT Devices → IoT Core → Kinesis → Lambda → DynamoDB
 ---
 
 ## 📊 **Amazon Redshift - Data Warehouse**
+
+**Définition :** Amazon Redshift est un data warehouse entièrement managé et évolutif qui permet d'analyser de grandes quantités de données structurées et semi-structurées à l'aide de requêtes SQL standard et d'outils de business intelligence existants. Il utilise une architecture de traitement massivement parallèle (MPP) pour distribuer et exécuter des requêtes complexes sur des pétaoctets de données. Redshift offre des performances de requêtage rapides grâce à son optimisation de colonnes, sa compression avancée, et ses capacités de mise à l'échelle automatique. Le service prend en charge l'intégration avec S3 via Redshift Spectrum pour l'analyse directe des données dans le data lake, et propose des options serverless pour les workloads variables. Redshift est optimisé pour les analyses complexes, les rapports métier, et les applications de business intelligence à grande échelle.
 
 ### **Quand Choisir Redshift ?**
 

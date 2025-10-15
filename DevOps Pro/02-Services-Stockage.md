@@ -19,6 +19,8 @@ Les services de stockage constituent le backbone de la persistance des données.
 
 ## 📦 **Amazon S3 - Object Storage Universel**
 
+**Définition :** Amazon Simple Storage Service (S3) est un service de stockage d'objets qui offre une évolutivité, une disponibilité des données, une sécurité et des performances de pointe. S3 permet de stocker et de récupérer n'importe quel volume de données depuis n'importe où sur le web. Il est conçu pour offrir une durabilité de 99.999999999% (11 neuf) et stocke des objets (fichiers) dans des buckets (conteneurs). S3 prend en charge plusieurs classes de stockage optimisées pour différents cas d'usage, des fonctionnalités de versioning, de chiffrement, et une intégration étendue avec d'autres services AWS pour l'analyse, le calcul et la distribution de contenu.
+
 ### **Quand Choisir S3 ?**
 
 #### **Scénarios Idéaux**
@@ -94,6 +96,8 @@ CodeCommit → CodeBuild → S3 (artifacts) → CodeDeploy → EC2
 
 ## 💽 **Amazon EBS - Block Storage Persistant**
 
+**Définition :** Amazon Elastic Block Store (EBS) est un service de stockage par blocs durable et performant conçu pour être utilisé avec des instances Amazon EC2. EBS fournit des volumes de stockage persistants au niveau des blocs qui peuvent être attachés et détachés des instances EC2 selon les besoins. Il offre plusieurs types de volumes optimisés pour différents cas d'usage, avec des garanties de performance (IOPS, débit), des capacités de snapshot pour la sauvegarde et la restauration, et des fonctionnalités de chiffrement. EBS est particulièrement adapté aux applications nécessitant un stockage persistant, des performances prévisibles et une faible latence.
+
 ### **Quand Choisir EBS ?**
 
 #### **Scénarios Idéaux**
@@ -162,6 +166,8 @@ ALB → Auto Scaling Group (EC2 + EBS) → EFS (shared config)
 
 ## 📁 **Amazon EFS - File Storage Managed**
 
+**Définition :** Amazon Elastic File System (EFS) est un système de fichiers simple, évolutif et élastique à utiliser avec les services cloud AWS et les ressources sur site. Il est conçu pour être monté simultanément sur des milliers d'instances EC2, conteneurs et fonctions Lambda, offrant un accès partagé aux données. EFS met automatiquement à l'échelle le stockage et les performances en fonction des besoins, sans nécessiter de provisionnement ou de gestion de capacité. Il prend en charge le protocole NFS et offre des fonctionnalités de haute disponibilité, durabilité et sécurité intégrées, ce qui en fait un choix idéal pour les applications nécessitant un stockage de fichiers partagé et élastique.
+
 ### **Quand Choisir EFS ?**
 
 #### **Scénarios Idéaux**
@@ -228,6 +234,8 @@ CodeCommit → CodeBuild (EFS cache) → S3 (artifacts) → CodeDeploy
 ---
 
 ## 🖥️ **Amazon FSx - Managed File Servers**
+
+**Définition :** Amazon FSx est une famille de services de stockage de fichiers entièrement managés qui offrent des systèmes de fichiers haute performance optimisés pour un large éventail de workloads. FSx propose plusieurs options spécialisées : FSx for Windows File Server (pour les applications Windows), FSx for Lustre (pour le calcul haute performance), FSx for NetApp ONTAP (pour les workloads d'entreprise), et FSx for OpenZFS (pour les workloads Linux). Chaque service fournit un stockage de fichiers entièrement managé avec des capacités de mise à l'échelle automatique, de sauvegarde intégrée, et d'intégration native avec d'autres services AWS, permettant aux utilisateurs de se concentrer sur leurs applications plutôt que sur la gestion de l'infrastructure de stockage.
 
 ### **Quand Choisir FSx ?**
 

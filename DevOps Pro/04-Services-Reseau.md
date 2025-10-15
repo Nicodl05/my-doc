@@ -18,6 +18,8 @@ Les services réseau constituent l'infrastructure de connectivité et de distrib
 
 ## 🏠 **Amazon VPC - Virtual Private Cloud**
 
+**Définition :** Amazon Virtual Private Cloud (VPC) est un service qui permet de lancer des ressources AWS dans un réseau virtuel logiquement isolé que vous définissez. Ce réseau virtuel ressemble beaucoup à un réseau traditionnel que vous pourriez exploiter dans votre propre data center, avec les avantages de l'infrastructure évolutive d'AWS. VPC offre un contrôle total sur l'environnement réseau virtuel, y compris la sélection de votre propre plage d'adresses IP, la création de sous-réseaux, la configuration de tables de routage et de passerelles réseau. Il permet d'isoler et de sécuriser les ressources AWS, de connecter à des réseaux sur site via VPN ou Direct Connect, et de définir des règles de sécurité granulaires via les groupes de sécurité et les listes de contrôle d'accès réseau (ACL).
+
 ### **Quand Choisir VPC ?**
 
 #### **Scénarios Idéaux**
@@ -93,6 +95,8 @@ API Gateway → VPC Link → NLB (private) → ECS Services (private subnets)
 
 ## 🌍 **Amazon Route 53 - DNS Service**
 
+**Définition :** Amazon Route 53 est un service web de système de noms de domaine (DNS) hautement disponible et évolutif. Il est conçu pour donner aux développeurs et aux entreprises un moyen extrêmement fiable et rentable de diriger les utilisateurs finaux vers les applications Internet en traduisant les noms de domaine lisibles par l'homme (comme www.example.com) en adresses IP numériques (comme 192.0.2.1) que les ordinateurs utilisent pour se connecter les uns aux autres. Route 53 offre des fonctionnalités avancées de routage du trafic, y compris le routage basé sur la latence, la géolocalisation, les pondérations, et la surveillance de l'état, permettant d'optimiser les performances et la disponibilité des applications. Le service prend également en charge l'enregistrement de noms de domaine et offre une intégration étendue avec d'autres services AWS.
+
 ### **Quand Choisir Route 53 ?**
 
 #### **Scénarios Idéaux**
@@ -166,6 +170,8 @@ Route 53 (weighted) → Blue ALB (90%) + Green ALB (10%)
 ---
 
 ## ⚡ **Amazon CloudFront - Content Delivery Network**
+
+**Définition :** Amazon CloudFront est un réseau de diffusion de contenu (CDN) rapide qui sécurise et accélère la distribution de contenu statique et dynamique aux utilisateurs finaux du monde entier. Il intègre un réseau mondial de points de présence (edge locations) stratégiquement situés pour réduire la latence et améliorer les performances des applications web. CloudFront fonctionne en mettant en cache les copies du contenu à proximité des utilisateurs, en optimisant automatiquement les protocoles de livraison, et en offrant des fonctionnalités de sécurité intégrées comme AWS WAF et Shield pour la protection contre les attaques DDoS et les menaces web. Le service prend en charge l'intégration avec diverses origines (S3, EC2, API Gateway, etc.) et offre des capacités de streaming en direct et à la demande pour les médias.
 
 ### **Quand Choisir CloudFront ?**
 
@@ -241,6 +247,8 @@ Mobile Apps → CloudFront → API Gateway → Lambda
 ---
 
 ## 🚪 **Amazon API Gateway - API Management**
+
+**Définition :** Amazon API Gateway est un service entièrement managé qui facilite aux développeurs la création, la publication, la maintenance, le monitoring et la sécurisation d'APIs à n'importe quelle échelle. Il agit comme une "porte d'entrée" pour les applications accédant à des données, une logique métier ou des fonctionnalités depuis des backends tels que des fonctions Lambda, des services web ou d'autres applications AWS. API Gateway prend en charge les API REST, WebSocket et GraphQL, offre des fonctionnalités avancées comme la transformation des requêtes/réponses, la limitation du débit, l'authentification et l'autorisation via AWS Cognito ou des fournisseurs d'identité personnalisés, et fournit des capacités d'analytics et de monitoring intégrées. Le service permet aux développeurs de se concentrer sur la logique métier plutôt que sur l'infrastructure d'API.
 
 ### **Quand Choisir API Gateway ?**
 

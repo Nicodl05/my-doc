@@ -18,6 +18,8 @@ Les services d'analyse permettent de traiter et visualiser les données à grand
 
 ## 🎯 **Amazon Athena - SQL Serverless sur S3**
 
+**Définition :** Amazon Athena est un service d'analyse de données interactif et serverless qui permet d'analyser des données directement dans Amazon S3 à l'aide de requêtes SQL standard. Le service élimine le besoin de gérer une infrastructure d'entrepôt de données, offrant une analyse ad-hoc sur des données structurées, semi-structurées et non structurées stockées dans S3. Athena utilise Presto comme moteur de requête et supporte des formats de données courants comme CSV, JSON, Parquet, ORC et Avro. Le service facture uniquement pour les données scannées par requête, offrant une approche économique pour l'analyse de gros volumes de données sans nécessiter de cluster permanent. Athena s'intègre nativement avec AWS Glue pour la découverte de schémas et le catalogue de métadonnées.
+
 ### **Quand Choisir Athena ?**
 
 #### **Scénarios Idéaux**
@@ -94,6 +96,8 @@ Multiple Sources → S3 Data Lake → Lake Formation → Athena → BI Tools
 
 ## 📈 **Amazon QuickSight - Business Intelligence**
 
+**Définition :** Amazon QuickSight est un service de business intelligence (BI) rapide et cloud-native qui permet de créer des visualisations interactives, des tableaux de bord et des analyses de données à partir de diverses sources. Le service utilise le moteur SPICE (Super-fast, Parallel, In-memory Calculation Engine) pour des performances de requête ultra-rapides sur des milliards de lignes de données. QuickSight supporte plus de 40 sources de données, incluant AWS services (Redshift, Athena, S3), bases de données externes, et APIs. Le service offre des capacités de machine learning intégrées pour la détection d'anomalies, les prévisions, et l'analyse narrative automatisée. QuickSight peut être utilisé en mode serverless avec facturation par session ou par utilisateur, et supporte l'intégration embedded dans des applications tierces pour des expériences analytics personnalisées.
+
 ### **Quand Choisir QuickSight ?**
 
 #### **Scénarios Idéaux**
@@ -168,6 +172,8 @@ Application → API Gateway → Lambda → QuickSight Embedded → Users
 ---
 
 ## 🚀 **Amazon EMR - Elastic MapReduce**
+
+**Définition :** Amazon EMR (Elastic MapReduce) est un service cloud managé qui simplifie l'exécution de frameworks de big data comme Apache Hadoop, Apache Spark, Apache Hive, Apache HBase, Apache Flink et Presto sur des clusters EC2. Le service automatise le provisionnement, la configuration, et la gestion des clusters, permettant aux utilisateurs de se concentrer sur leurs applications de traitement de données plutôt que sur l'infrastructure. EMR offre plusieurs options de déploiement : clusters persistants pour workloads continus, clusters temporaires pour jobs batch, EMR Serverless pour une exécution sans gestion d'infrastructure, et EMR Studio pour un environnement de développement interactif. Le service s'intègre nativement avec S3 pour le stockage, Lake Formation pour la gouvernance, et d'autres services AWS pour créer des pipelines de données complets.
 
 ### **Quand Choisir EMR ?**
 
@@ -244,6 +250,8 @@ S3 Dataset → EMR Spark MLlib → SageMaker → Model Deployment
 ---
 
 ## 🔧 **AWS Glue - ETL Serverless**
+
+**Définition :** AWS Glue est un service ETL (Extract, Transform, Load) entièrement serverless qui facilite la découverte, la préparation et l'intégration de données à grande échelle. Le service comprend plusieurs composants : Glue ETL pour l'exécution de jobs de transformation de données, Glue Data Catalog pour un référentiel centralisé de métadonnées, Glue Crawlers pour la découverte automatique de schémas de données, et Glue Studio pour une interface visuelle de création de pipelines ETL. Glue supporte plus de 70 sources de données, incluant S3, RDS, DynamoDB, et des bases de données externes via JDBC. Le service utilise Apache Spark sous le capot pour les transformations, offre un auto-scaling automatique, et s'intègre nativement avec Lake Formation pour la gouvernance des données. Glue facture uniquement pour les ressources utilisées pendant l'exécution des jobs, offrant une approche économique pour les workloads ETL.
 
 ### **Quand Choisir Glue ?**
 

@@ -18,6 +18,8 @@ Les services de développement permettent d'accélérer le cycle de développeme
 
 ## 🧠 **Amazon CodeGuru - IA pour la Qualité du Code**
 
+**Définition :** Amazon CodeGuru est un service de développement assisté par IA qui utilise le machine learning pour améliorer automatiquement la qualité, les performances, et la sécurité du code. Le service comprend deux composants principaux : CodeGuru Reviewer qui analyse le code statiquement pour détecter les bugs, les vulnérabilités de sécurité, les mauvaises pratiques, et les inefficacités, et CodeGuru Profiler qui analyse les performances des applications en production pour identifier les goulots d'étranglement, les fuites de mémoire, et les optimisations possibles. CodeGuru supporte plusieurs langages de programmation (Java, Python, JavaScript, TypeScript, C#, Go), s'intègre nativement avec les services de développement AWS (CodeCommit, CodeBuild, CodePipeline), et fournit des recommandations actionnables avec des explications détaillées et des exemples de correction. Le service apprend continuellement des bases de code open-source et des patterns de qualité pour améliorer ses recommandations.
+
 ### **Quand Choisir CodeGuru ?**
 
 #### **Scénarios Idéaux**
@@ -93,6 +95,8 @@ Application → CodeGuru Profiler → Recommendations → Code Changes
 ---
 
 ## 📦 **AWS CodeArtifact - Gestion des Artefacts**
+
+**Définition :** AWS CodeArtifact est un service de gestion d'artefacts entièrement managé qui permet de stocker, publier, et partager en toute sécurité des paquets logiciels utilisés dans le processus de développement. Le service supporte les formats de paquets populaires comme Maven, Gradle, npm, NuGet, PyPI, et SwiftPM, offrant un référentiel privé pour les dépendances internes et un proxy vers des référentiels publics externes comme Maven Central, npmjs, ou NuGet Gallery. CodeArtifact organise les artefacts dans des domaines (regroupements logiques) et des référentiels (conteneurs d'artefacts), avec un contrôle d'accès granulaire via IAM et des politiques de ressources. Le service inclut des capacités de mise en cache automatique pour réduire les coûts et améliorer les performances, l'intégration native avec CodeBuild et d'autres services AWS, et le support du versioning sémantique pour une gestion précise des dépendances.
 
 ### **Quand Choisir CodeArtifact ?**
 
@@ -170,6 +174,8 @@ Team A → CodeArtifact Domain → Team B Access → Shared Components
 
 ## ☁️ **AWS Cloud9 - IDE Cloud Collaboratif**
 
+**Définition :** AWS Cloud9 est un environnement de développement intégré (IDE) cloud-based qui permet d'écrire, exécuter, et déboguer du code directement depuis un navigateur web. Le service offre un terminal Linux intégré avec AWS CLI pré-installé, un éditeur de code avec coloration syntaxique et auto-complétion pour plus de 40 langages, un débogueur intégré pour les applications locales et distantes, et des capacités de pair programming pour la collaboration en temps réel. Cloud9 peut être lancé sur des instances EC2 managées ou sur des serveurs existants via SSH, offrant un accès sécurisé aux environnements de développement depuis n'importe quel appareil. Le service s'intègre nativement avec les services AWS comme CodeCommit pour le contrôle de version, Lambda pour le développement serverless, et Systems Manager pour la gestion des environnements, facilitant le développement d'applications cloud-native sans configuration locale.
+
 ### **Quand Choisir Cloud9 ?**
 
 #### **Scénarios Idéaux**
@@ -245,6 +251,8 @@ Distributed Team → Cloud9 → Shared Workspaces → Real-time Collaboration
 ---
 
 ## 🚀 **AWS Amplify - Développement Full-Stack**
+
+**Définition :** AWS Amplify est une plateforme complète de développement qui permet de créer, déployer, et héberger des applications web et mobiles full-stack avec un backend serverless. Le service comprend Amplify CLI pour la gestion d'infrastructure as code, Amplify Studio pour une interface visuelle de développement low-code, Amplify Hosting pour le déploiement continu avec CDN intégré, et Amplify Libraries pour des SDK frontend qui simplifient l'intégration avec les services AWS. Amplify offre des capacités de génération automatique de code pour les opérations CRUD, l'authentification via Cognito, les APIs GraphQL via AppSync, le stockage de fichiers via S3, et les fonctions serverless via Lambda. Le service supporte les frameworks populaires comme React, Angular, Vue.js, Next.js, et Flutter, avec des capacités de déploiement automatique depuis Git et des environnements de prévisualisation pour les pull requests.
 
 ### **Quand Choisir Amplify ?**
 

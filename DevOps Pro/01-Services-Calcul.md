@@ -19,6 +19,8 @@ Les services de calcul forment la base de toute infrastructure cloud. Le choix e
 
 ## 🔧 **Amazon EC2 - Serveurs Virtuels**
 
+**Définition :** Amazon Elastic Compute Cloud (EC2) est un service web qui fournit une capacité de calcul redimensionnable dans le cloud. Il est conçu pour faciliter l'accès à l'informatique à la demande pour les développeurs. EC2 offre un contrôle total sur les ressources informatiques et permet de lancer autant de serveurs virtuels que nécessaire, de configurer la sécurité et le réseau, et de gérer le stockage. Les instances EC2 peuvent être lancées en quelques minutes et offrent une variété de types d'instances optimisés pour différents cas d'usage, de l'informatique générale aux applications nécessitant des performances élevées.
+
 ### **Quand Choisir EC2 ?**
 
 #### **Scénarios Idéaux**
@@ -72,6 +74,8 @@ Internet → CloudFront → ALB → Auto Scaling Group (EC2) → RDS
 ---
 
 ## ⚡ **AWS Lambda - Serverless Functions**
+
+**Définition :** AWS Lambda est un service de calcul serverless qui exécute du code en réponse à des événements et gère automatiquement les ressources informatiques sous-jacentes. Il permet aux développeurs d'exécuter du code sans provisionner ni gérer de serveurs. Lambda prend en charge plusieurs langages de programmation (Node.js, Python, Java, Go, .NET, Ruby) et peut être déclenché par divers événements AWS ou sources externes. Le service met automatiquement à l'échelle les ressources en fonction de la demande, de zéro à des milliers d'exécutions simultanées, et facture uniquement le temps de calcul consommé à la milliseconde près.
 
 ### **Quand Choisir Lambda ?**
 
@@ -146,6 +150,8 @@ S3 Upload → Lambda → Glue → Redshift
 
 ## 🐳 **AWS Fargate - Containers Serverless**
 
+**Définition :** AWS Fargate est un moteur de calcul serverless pour conteneurs qui fonctionne avec Amazon Elastic Container Service (ECS) et Amazon Elastic Kubernetes Service (EKS). Il élimine le besoin de provisionner et de gérer des serveurs ou des clusters pour exécuter des conteneurs. Fargate alloue automatiquement la quantité appropriée de ressources informatiques pour exécuter les conteneurs, gère le scaling automatique, et facture uniquement pour les ressources vCPU et mémoire utilisées par les tâches en cours d'exécution. Il prend en charge les applications conteneurisées sans nécessiter de connaissances approfondies sur l'infrastructure sous-jacente.
+
 ### **Quand Choisir Fargate ?**
 
 #### **Scénarios Idéaux**
@@ -217,7 +223,9 @@ Legacy App → Container → ECS Fargate → RDS
 
 ## 🔄 **AWS Batch - Traitement par Lots**
 
-### **Quand Choisir AWS Batch ?**
+**Définition :** AWS Batch est un service de calcul par lots entièrement managé qui planifie, exécute et met à l'échelle des charges de travail de calcul par lots sur la plateforme AWS. Il optimise la distribution et l'utilisation des ressources informatiques en fonction de la quantité et de l'échelle des travaux par lots soumis. Batch peut s'exécuter sur des instances EC2 ou AWS Fargate, et fournit des files d'attente de tâches, des priorités, des dépendances et des tentatives automatiques. Le service est particulièrement adapté aux workloads de calcul intensif qui peuvent être parallélisés et ne nécessitent pas d'interaction en temps réel.
+
+### **Quand Choisir Batch ?**
 
 #### **Scénarios Idéaux**
 - **Calcul intensif** périodique (nuit, fin de mois)

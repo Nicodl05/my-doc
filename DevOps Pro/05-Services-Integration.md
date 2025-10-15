@@ -18,6 +18,8 @@ Les services d'intégration permettent de créer des architectures **event-drive
 
 ## 📨 **Amazon SQS - Simple Queue Service**
 
+**Définition :** Amazon Simple Queue Service (SQS) est un service de mise en file d'attente de messages entièrement managé qui permet de découpler et de mettre à l'échelle les microservices, les systèmes distribués et les applications serverless. SQS offre deux types de files d'attente : les files d'attente standard pour un débit élevé avec livraison at-least-once, et les files d'attente FIFO pour un traitement ordonné avec livraison exactement-once. Le service stocke les messages de manière redondante dans plusieurs zones de disponibilité, offre des fonctionnalités de visibilité des messages, de rétention configurable, et d'intégration native avec d'autres services AWS. SQS est particulièrement adapté aux architectures event-driven et aux workloads nécessitant un buffering asynchrone entre producteurs et consommateurs de messages.
+
 ### **Quand Choisir SQS ?**
 
 #### **Scénarios Idéaux**
@@ -89,6 +91,8 @@ API Gateway → SQS FIFO → ECS Tasks → DynamoDB
 ---
 
 ## 📢 **Amazon SNS - Simple Notification Service**
+
+**Définition :** Amazon Simple Notification Service (SNS) est un service de messagerie pub/sub entièrement managé et hautement disponible qui permet d'envoyer des messages ou des notifications à un grand nombre d'abonnés ou d'autres services AWS. SNS prend en charge l'envoi de notifications par email, SMS, push mobile, et HTTP/HTTPS, ainsi que l'intégration avec SQS, Lambda, et d'autres services AWS. Le service offre des fonctionnalités avancées comme le filtrage des messages basé sur les attributs, la livraison des messages avec ordre et déduplication pour les topics FIFO, et la prise en charge de gros volumes de messages avec une évolutivité automatique. SNS est particulièrement adapté aux architectures event-driven nécessitant une communication one-to-many fiable et scalable.
 
 ### **Quand Choisir SNS ?**
 
@@ -164,6 +168,8 @@ Application Events → SNS → Multiple Lambdas (processing, logging, analytics)
 ---
 
 ## 🎯 **Amazon EventBridge - Event Bus**
+
+**Définition :** Amazon EventBridge est un service de bus d'événements serverless qui facilite la création d'architectures event-driven à l'échelle en connectant des applications utilisant des événements. Il ingère, filtre, transforme et achemine les événements entre les services AWS, les applications SaaS intégrées, et les applications personnalisées. EventBridge offre des fonctionnalités avancées comme le filtrage basé sur le contenu des événements, les règles de transformation, les destinations API personnalisées, et l'intégration avec plus de 90 services AWS et 35 partenaires SaaS. Le service prend en charge les événements personnalisés, les événements AWS (via CloudTrail), et les événements de partenaires, permettant aux organisations de créer des workflows réactifs et découplés. EventBridge est particulièrement adapté aux architectures modernes nécessitant une orchestration d'événements complexe et multi-sources.
 
 ### **Quand Choisir EventBridge ?**
 
@@ -241,6 +247,8 @@ Shopify Orders → EventBridge → Lambda → DynamoDB
 
 ## ⚙️ **AWS Step Functions - Workflow Orchestration**
 
+**Définition :** AWS Step Functions est un service d'orchestration visuelle serverless qui permet de créer et d'exécuter des workflows complexes en coordonnant plusieurs services AWS. Il utilise un langage déclaratif basé sur JSON (Amazon States Language) pour définir des workflows composés d'états (tâches, choix, parallèles, etc.) qui peuvent inclure des fonctions Lambda, des conteneurs ECS, des jobs Batch, et d'autres services AWS. Step Functions offre des fonctionnalités avancées comme la gestion d'erreurs et de nouvelles tentatives, l'exécution parallèle, les workflows express pour les cas d'usage à haute fréquence, et l'intégration avec plus de 200 services AWS. Le service fournit une visibilité complète sur l'exécution des workflows, des capacités de débogage, et des métriques intégrées, ce qui en fait un outil essentiel pour l'orchestration d'applications distribuées et de pipelines de traitement de données.
+
 ### **Quand Choisir Step Functions ?**
 
 #### **Scénarios Idéaux**
@@ -315,6 +323,8 @@ Data Ingestion → Preprocessing → Training → Deployment
 ---
 
 ## 🌊 **Amazon Kinesis - Streaming Data**
+
+**Définition :** Amazon Kinesis est une plateforme de streaming de données entièrement managée qui facilite la collecte, le traitement et l'analyse de flux de données en temps réel à grande échelle. La famille Kinesis comprend plusieurs services : Kinesis Data Streams pour l'ingestion et le stockage de données streaming, Kinesis Data Firehose pour la livraison automatique vers des destinations comme S3 ou Redshift, Kinesis Data Analytics pour l'analyse SQL en temps réel, et Kinesis Video Streams pour le streaming vidéo. Le service offre une évolutivité automatique, une durabilité des données, et des capacités de traitement en temps réel avec une latence de l'ordre de la seconde. Kinesis est particulièrement adapté aux cas d'usage IoT, analyse de logs, streaming de médias, et applications nécessitant un traitement continu de gros volumes de données.
 
 ### **Quand Choisir Kinesis ?**
 
