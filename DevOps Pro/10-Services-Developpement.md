@@ -29,68 +29,151 @@ Les services de développement permettent d'accélérer le cycle de développeme
 - **Réduction de la dette technique** continue
 
 #### **Composants et Cas d'Usage**
-- **CodeGuru Reviewer** : Analyse statique intelligente
-- **CodeGuru Profiler** : Optimisation des performances runtime
-- **Security Scanner** : Détection de vulnérabilités
-- **Recommendations** : Suggestions d'amélioration
+
+##### **CodeGuru Reviewer**
+- **Analyse statique intelligente** du code source
+- **Détection automatique** des bugs et vulnérabilités
+- **Recommandations de sécurité** basées sur les patterns
+- **Intégration PR** avec révision automatique
+- **Support multi-langage** (Java, Python, JavaScript, C#, Go, etc.)
+
+##### **CodeGuru Profiler**
+- **Profilage runtime continu** des applications en production
+- **Identification des goulots d'étranglement** de performance
+- **Détection des fuites mémoire** et allocation inefficace
+- **Recommendations d'optimisation** actionnables
+- **Overhead minimal** sur les performances
+- **Historical analysis** pour suivre les améliorations
+
+### **Quand Choisir CodeGuru Reviewer ?**
+
+#### **Scénarios Idéaux**
+- **Qualité de code** automatisée dans CI/CD
+- **Détection de bugs** avant production
+- **Conformité de sécurité** du code
+- **Reviews de pull requests** assistées par IA
+
+#### **Cas d'Usage et Patterns**
+- **Pre-commit hooks** : Analyse avant commit
+- **PR reviews** : Feedback automatique sur les pull requests
+- **Pipeline gates** : Blocage du déploiement si problèmes critiques
+- **Knowledge base** : Apprentissage des patterns de qualité équipe
+
+### **Quand Choisir CodeGuru Profiler ?**
+
+#### **Scénarios Idéaux**
+- **Optimisation des performances** en production
+- **Réduction des coûts** de compute
+- **Identification des anomalies** de performance
+- **Continuous performance monitoring** des applications
 
 ### **Interactions dans les Pipelines DevOps**
 
-#### **Avec les Services CI/CD**
+#### **CodeGuru Reviewer dans les Architectures**
+
+##### **Avec les Services CI/CD**
 - **CodePipeline** : Intégration dans les pipelines
 - **CodeBuild** : Analyse pendant la construction
-- **CodeCommit** : Review automatique des PR
+- **CodeCommit** : Review automatique des PR via webhooks
 - **CodeDeploy** : Validation avant déploiement
 
-#### **Avec les Services de Sécurité**
-- **Inspector** : Complète l'analyse de sécurité
-- **GuardDuty** : Corrèle avec les menaces runtime
-- **Security Hub** : Findings consolidés
-- **Config** : Conformité du code
+##### **Avec les Services de Sécurité**
+- **Inspector** : Complète l'analyse de sécurité au niveau infrastructure
+- **GuardDuty** : Corrèle les violations code avec menaces runtime
+- **Security Hub** : Findings consolidés de tous les scanners
+- **Config** : Conformité du code appliqué via politiques
 
-#### **Avec les Services de Développement**
-- **Cloud9** : IDE avec recommandations intégrées
-- **CodeArtifact** : Analyse des dépendances
-- **Amplify** : Qualité pour applications web
-- **SageMaker** : Qualité pour code ML
+#### **CodeGuru Profiler dans les Architectures**
 
-### **Comparaison CodeGuru vs Alternatives**
+##### **Avec les Services de Calcul**
+- **EC2** : Profilage des applications auto-hébergées
+- **Lambda** : Optimisation des performances serverless
+- **ECS/EKS** : Monitoring des conteneurs en production
+- **RDS** : Corrélation avec bottlenecks base de données
 
-#### **CodeGuru Gagne Quand :**
+##### **Avec les Services de Monitoring**
+- **CloudWatch** : Corrélation des métriques
+- **X-Ray** : Tracing distribué complémentaire
+- **Application Insights** : Contexte applicatif
+- **SNS** : Alertes sur anomalies de performance
+
+### **Comparaison CodeGuru Reviewer vs Alternatives**
+
+#### **CodeGuru Reviewer Gagne Quand :**
 - **IA intégrée** pour recommandations intelligentes
-- **Intégration AWS** native complète
-- **Multi-langage** support (Java, Python, etc.)
-- **Serverless** et scaling automatique
+- **Intégration AWS** native complète (CodeCommit, CodeBuild)
+- **Multi-langage** support étendu
+- **Security focus** avec détection de vulnérabilités
 
 #### **Alternatives Gagnent Quand :**
-- **SonarQube** : Open-source personnalisable
-- **Checkmarx** : Security-focused scanning
-- **GitHub Copilot** : Assistance en temps réel
-- **Custom linters** : Règles métier spécifiques
+- **SonarQube** : Open-source, personnalisable, règles très avancées
+- **Checkmarx** : Security-focused scanning très complet
+- **Veracode** : Enterprise security scanning
+- **ESLint/Pylint** : Linters spécialisés par langage
 
-### **CodeGuru dans les Architectures DevOps**
+### **Comparaison CodeGuru Profiler vs Alternatives**
+
+#### **CodeGuru Profiler Gagne Quand :**
+- **AWS-native** et serverless-first design
+- **Overhead minimal** sur les performances
+- **Intégration CloudWatch** transparente
+- **Insights recommandations** basés sur ML
+
+#### **Alternatives Gagnent Quand :**
+- **Datadog** : APM enterprise très complète
+- **New Relic** : Monitoring polyglotte mature
+- **Dynatrace** : Deep code-level analytics
+- **Custom profilers** : Contrôle total sur la collecte
+
+### **CodeGuru Reviewer dans les Architectures DevOps**
 
 #### **Scénario : CI/CD Pipeline with Quality Gates**
 ```
-CodeCommit → CodePipeline → CodeGuru → CodeBuild → Production
+CodeCommit PR → CodeGuru Reviewer → CodeBuild → CodePipeline → Production
 ```
 
 **Pourquoi cette architecture ?**
 - **CodeCommit** stocke le code source
-- **CodePipeline** orchestre le workflow
-- **CodeGuru** valide la qualité avant build
+- **CodeGuru Reviewer** analyse automatiquement les PR
 - **CodeBuild** compile seulement le code approuvé
+- **CodePipeline** orchestre le workflow complet
 
-#### **Scénario : Performance Optimization**
+#### **Scénario : Security-First Code Review**
 ```
-Application → CodeGuru Profiler → Recommendations → Code Changes
+Developer Push → CodeCommit Webhook → CodeGuru (Security) → Approval/Block
 ```
 
 **Pourquoi cette architecture ?**
-- **Application** génère des métriques de performance
-- **CodeGuru Profiler** analyse les bottlenecks
+- **Webhook** déclenche l'analyse immédiatement
+- **CodeGuru** détecte les vulnérabilités tôt
+- **Approval** gate prévient le déploiement de code dangereux
+- **Developer feedback** permet la correction rapide
+
+---
+
+### **CodeGuru Profiler dans les Architectures DevOps**
+
+#### **Scénario : Production Performance Optimization**
+```
+Production App → CodeGuru Profiler → CloudWatch → Recommendations → Code Changes
+```
+
+**Pourquoi cette architecture ?**
+- **Application** envoie les données de profilage
+- **CodeGuru Profiler** identifie les hotspots
+- **CloudWatch** centralise les métriques
 - **Recommendations** guident les optimisations
-- **Code Changes** améliorent les performances
+
+#### **Scénario : Lambda Optimization for Cost Reduction**
+```
+Lambda Functions → CodeGuru Profiler → Cost Analysis → Optimizations
+```
+
+**Pourquoi cette architecture ?**
+- **Lambda** génère les données de profilage
+- **CodeGuru** identifie les inefficacités
+- **Cost Analysis** montre l'impact financier
+- **Optimizations** réduisent les frais AWS
 
 ---
 
