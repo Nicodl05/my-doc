@@ -3,6 +3,7 @@ bin/
 obj/
 out/
 
+Agent-Contract.md
 # User-specific files
 *.rsuser
 *.suo
