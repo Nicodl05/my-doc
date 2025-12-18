@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  web:
+    build: ./
+    image: myapp:latest
+    ports:
+      - "8080:3000"
+    volumes:
+      - ./:/app:delegated
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD-SHELL","wget -qO- http://localhost:3000/healthz || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: example
+    volumes:
+      - db-data:/var/lib/postgresql/data
+volumes:
+  db-data:

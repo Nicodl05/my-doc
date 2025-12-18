@@ -1,0 +1,66 @@
+## DaemonSet example with nodeSelector, tolerations and full probes (startup/readiness/liveness)
+# - Deploys one Pod per matching Node.
+# - Uses `hashicorp/http-echo` (simple HTTP server) to illustrate probes.
+
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: probe-demo-daemonset
+  labels:
+    app: probe-daemon
+spec:
+  selector:
+    matchLabels:
+      app: probe-daemon
+  updateStrategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: probe-daemon
+    spec:
+      # Only schedule on nodes labeled k8s-role=worker (example)
+      nodeSelector:
+        k8s-role: worker
+      # Tolerate nodes tainted for monitoring/dedicated workloads
+      tolerations:
+      - key: "dedicated"
+        operator: "Equal"
+        value: "monitoring"
+        effect: "NoSchedule"
+      containers:
+      - name: http-echo
+        image: hashicorp/http-echo:0.2.3
+        # http-echo listens on the specified port; it will respond 200 on any path
+        args:
+        - "-listen=:8080"
+        - "-text=probe-demo"
+        ports:
+        - containerPort: 8080
+        # Startup probe: tolerate long startup (prevents liveness from killing too early)
+        startupProbe:
+          httpGet:
+            path: /startup
+            port: 8080
+          periodSeconds: 10
+          failureThreshold: 12
+        # Readiness probe: controls whether Pod receives Service traffic
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          timeoutSeconds: 2
+          failureThreshold: 3
+        # Liveness probe: if failing repeatedly, kubelet restarts the container
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 10
+          timeoutSeconds: 2
+          failureThreshold: 3

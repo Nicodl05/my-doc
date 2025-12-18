@@ -1,0 +1,43 @@
+## Pod example with startup/readiness/liveness probes
+# Useful to test and tune probe parameters locally (minikube/kind).
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: probe-demo-pod
+  labels:
+    app: probe-demo
+spec:
+  containers:
+  - name: http-echo
+    image: hashicorp/http-echo:0.2.3
+    args:
+    - "-listen=:8080"
+    - "-text=hello-probe"
+    ports:
+    - containerPort: 8080
+    # Startup: allow long initialization before liveness/readiness
+    startupProbe:
+      httpGet:
+        path: /startup
+        port: 8080
+      periodSeconds: 10
+      failureThreshold: 18
+    # Readiness: determines if Pod should receive Service traffic
+    readinessProbe:
+      httpGet:
+        path: /ready
+        port: 8080
+      initialDelaySeconds: 3
+      periodSeconds: 5
+      timeoutSeconds: 2
+      failureThreshold: 3
+    # Liveness: restarts the container if the app is unhealthy
+    livenessProbe:
+      httpGet:
+        path: /healthz
+        port: 8080
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      timeoutSeconds: 2
+      failureThreshold: 3
